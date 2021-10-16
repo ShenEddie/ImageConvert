@@ -4,7 +4,7 @@
 # @Time    : 2021-10-08 19:59
 # @Author  : Eddie Shen
 # @Email   : sheneddie@outlook.com
-# @File    : webp2jpg.py
+# @File    : image_convert.py
 # @Software: PyCharm
 
 
@@ -22,7 +22,8 @@ class Webp2jpg(object):
         self.save_dir = ''
 
     def openfile(self):
-        self.webp_paths = filedialog.askopenfilenames(filetypes=[('picture', '.webp')])
+        self.webp_paths = filedialog.askopenfilenames(
+            filetypes=[('picture', '.webp')])
         label_1.config(text="第一个webp文件位置：" + self.webp_paths[0])
 
     def save_images_dir(self):
@@ -64,11 +65,13 @@ if __name__ == '__main__':
     button_1.pack()
     label_1 = tk.Label(windows)
     label_1.pack()
-    button_2 = tk.Button(windows, text="选择保存文件夹", command=webp.save_images_dir)
+    button_2 = tk.Button(windows,
+                         text="选择保存文件夹", command=webp.save_images_dir)
     button_2.pack()
     label_2 = tk.Label(windows)
     label_2.pack()
-    button_3 = tk.Button(windows, text="转换", command=webp.convert_webp_jpg)
+    button_3 = tk.Button(windows,
+                         text="转换", command=webp.convert_webp_jpg)
     button_3.pack()
     progress = ttk.Progressbar(windows, length=200)
     progress.pack()
